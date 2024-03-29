@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f3f3f3;
+    }
+
+    #certificate {
+      width: 600px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 8px solid black;
+      background-color: #fff;
+      position: relative;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+
+    #signature {
+      position: absolute;
+      bottom:10px;
+      font-weight: bold;
+      right: -55px;
+      width: 210px;
+      height: auto;
+    }
+    #pa {
+      position: absolute;
+      bottom: 40px;
+      right: 30px;
+      width: 50px;
+    }
+
+    #certificate h1 {
+      color: black;
+    }
+
+    #certificate h2 {
+      color: #333;
+    }
+
+    #certificate h3 {
+      color: #27ae60;
+    }
+
+    #certificate p {
+      color: #555;
+    }
+
+    #downloadBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #27ae60;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div id="certificate">
+ 
+  <h1>Skill Go Certification of Achievement </h1>
+  <p>This is to certify that</p>
+  <h2 id="recipientName">John Doe</h2>
+  <p>has successfully completed the course on</p>
+  <h3>Advanced Javascript Completion</h3>
+  <p>Issued on: <span id="issueDate">February 5, 2024</span></p>
+  <p id="pa">Signature</p>
+  <p id="signature">Alex S</p>
+</div>
+
+<button id="downloadBtn" onclick="downloadCertificate()">Download Certificate as PDF</button>
+<a id="downloadBtn" href="animi.html">Click me</a>
+
+<script>
+  function downloadCertificate() {
+    const certificate = document.getElementById('certificate');
+    const recipientName = document.getElementById('recipientName').innerText;
+    const issueDate = document.getElementById('issueDate').innerText;
+
+    // Add recipient name and issue date to the certificate
+    document.getElementById('recipientName').innerText = 'John Doe';
+    document.getElementById('issueDate').innerText = 'February 5, 2024';
+
+    // Create PDF
+    html2pdf(certificate);
+
+    // Restore original values
+    document.getElementById('recipientName').innerText = recipientName;
+    document.getElementById('issueDate').innerText = issueDate;
+  }
+</script>
+
+</body>
+</html>

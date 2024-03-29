@@ -1,0 +1,38 @@
+.box{
+    width:80%;
+    display: flex;
+    height:40vh;
+    
+    /* border-radius: 150px 150px 0 0; */
+  
+    background-color:#f3ac3c;
+    /* clip-path: polygon(0 41%, 0% 100%, 100% 54%); */
+   
+}
+.square1{
+    width:64%;
+    margin:0 auto;
+    height:34vh;
+    margin-top: 4%;
+position: relative;
+    background-color: black;
+}
+.square2{
+    width:45%;
+    position:absolute;
+    height:50%;
+    background-color: #1a4341;
+    bottom: 0;
+
+}
+.square3{
+position:absolute;
+bottom: 0;
+width:50%;
+right: 0;
+height: 50%;
+background-color:#f3ac3c;
+}
+
+
+
